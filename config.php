@@ -8,4 +8,7 @@
         'home',
         'add',
         'admin',
+        'add-book',
+        'delete',
+        'edit'
     ];
