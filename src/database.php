@@ -21,4 +21,5 @@
         return $db;
     }
 
+    function query($db,$stmt){}
     //$db=new PDO($dsn,$dbuser,$dbpassword);

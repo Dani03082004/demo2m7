@@ -1,6 +1,6 @@
 <?php
 
-$books=[
+/* $books=[
     [
         'id'=>1,
         'author'=>'John Fitti',
@@ -21,6 +21,7 @@ $books=[
     ]
     
 ];
+*/
 
 function filter($items,$key,$value){
     $filtered=[];
