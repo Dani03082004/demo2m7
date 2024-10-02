@@ -11,5 +11,3 @@
         </ul>
     </div>
     <?php include 'partials/footer.view.php';?>
-</body>
-</html>

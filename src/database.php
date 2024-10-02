@@ -21,5 +21,27 @@
         return $db;
     }
 
-    function query($db,$stmt){}
-    //$db=new PDO($dsn,$dbuser,$dbpassword);
+    // funcion de consulta
+
+    function query($db,$query){
+        $stmt=$db->prepare($query);
+        if($stmt->execute()){
+            $items=$stmt->fetchAll();
+        }
+        return $items;
+    }
+
+    function insert($db,$query){
+
+    }
+
+    function update($db,$query){
+        
+    }
+
+    function delete($db,$query){
+        if (isset($_GET['id'])){
+            $id = $_GET['id'];
+            echo $id;
+        }
+    }

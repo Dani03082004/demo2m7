@@ -1,5 +1,5 @@
 <?php
-    if (isset($_GET['id'])){
-        $id = $_GET['id'];
-        echo $id;
-    }
+
+require VIEWS.'/delete.view.php';
+
+
