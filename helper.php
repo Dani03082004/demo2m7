@@ -16,9 +16,11 @@
     http_response_code(404);
 }
 
-function dd($arg){
-    echo "<pre>";
-    var_dump($arg);
-    "</pre>";
+function dd(){
+    foreach (func_get_args() as $arg){
+        echo "<pre>";
+        var_dump($arg);
+        "</pre>";
+    }
     die;
 }

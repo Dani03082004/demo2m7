@@ -10,18 +10,23 @@ if (!empty($_POST) &&
 
     // conectar a BBDD 
     $db=connectMysql($dsn,$dbuser,$dbpassword);
+    // insertprove($db,'books',['title'=>$title,'author'=>$author,'year'=>$year]);
 
     // insertar
-    $stmt=$db->prepare(query: "INSERT INTO books (title,author,year) VALUES(?,?,?)");
+    // $stmt=$db->prepare(query: "INSERT INTO books (title,author,year) VALUES(?,?,?)");
 
-    // SI QUEREMOS HACERLO CON EL BIN PARAM
-    
+    // SI QUEREMOS HACERLO CON EL bindParam
+
     // $stmt=$db->prepare(query: "INSERT INTO books (title,author,year) VALUES(:title,:author,:year)");
     // $stmt->bind_param(':title', $title);
     // $stmt->bind_param(':author', $author);
     // $stmt->bind_param(':year', $year);
 
-    if($stmt->execute([$title,$author,$year])){
+    if(insertprove($db,'books',[
+        'title'=>$title,
+        'author'=>$author,
+        'year'=>$year,
+    ])){
         // volver a home
         header('Location:home');
     }else{
