@@ -12,8 +12,15 @@ if (!empty($_POST) &&
     $db=connectMysql($dsn,$dbuser,$dbpassword);
 
     // insertar
-    $stmt=$db->prepare("INSERT INTO books (title,author,year) VALUES(?,?,?)");
+    $stmt=$db->prepare(query: "INSERT INTO books (title,author,year) VALUES(?,?,?)");
+
+    // SI QUEREMOS HACERLO CON EL BIN PARAM
+    
+    // $stmt=$db->prepare(query: "INSERT INTO books (title,author,year) VALUES(:title,:author,:year)");
     // $stmt->bind_param(':title', $title);
+    // $stmt->bind_param(':author', $author);
+    // $stmt->bind_param(':year', $year);
+
     if($stmt->execute([$title,$author,$year])){
         // volver a home
         header('Location:home');
